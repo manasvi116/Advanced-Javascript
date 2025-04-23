@@ -63,24 +63,44 @@ console.log(dog.breed);
 // FUNCTIONS ON A CLASS ARE CALLED METHODS . WHEN DEFINING THESE METHIDS WE DONT NEED TO USE THE FUNCTION KEYWORD AND WE DIRECTLY START WITH THE NAME
 
 
+// class Person {
+//     constructor(firstname , lastname){
+//         this.firstname = firstname;
+//         this.lastname = lastname;
+       
+//     }
+
+
+// greet(){
+//     console.log("hi there i am " , this.firstname );
+// }
+
+// compliment(name , object){
+//     return("thats a wonderful " + object + " " + name);
+// }
+// }
+// let p = new Person ("manasvi " , "arora " );
+// let compliment = p.compliment("harry " , "hat");
+// console.log(compliment);
+// // let p = new Person ("manasvi " , "arora " );
+// p.greet();
+
+
+// prototpyes
+
 class Person {
-    constructor(firstname , lastname){
+    constructor(firstname, lastname){
         this.firstname = firstname;
         this.lastname = lastname;
-       
     }
-
-
-greet(){
-    console.log("hi there i am " , this.firstname );
 }
 
-compliment(name , object){
-    return("thats a wonderful " + object + " " + name);
-}
-}
-let p = new Person ("manasvi " , "arora " );
-let compliment = p.compliment("harry " , "hat");
-console.log(compliment);
-// let p = new Person ("manasvi " , "arora " );
-// p.greet();
+Person.prototype.introduce = function(){
+    console.log("Hi, I am " + this.firstname);
+};
+
+Person.prototype.favouriteColor = "green";
+
+let p = new Person("Maria", "dhjd");
+console.log(p.favouriteColor);  // green
+p.introduce();                  // Hi, I am Maria
